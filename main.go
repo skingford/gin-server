@@ -25,21 +25,24 @@ var (
 
 func main() {
 	defer config.CloseDatabaseConnection(db)
+
 	r := gin.Default()
 
-	authRoutes := r.Group("api/auth")
+	v1 := r.Group("/v1")
+
+	authRoutes := v1.Group("/auth")
 	{
 		authRoutes.POST("/login", authController.Login)
 		authRoutes.POST("/register", authController.Register)
 	}
 
-	userRoutes := r.Group("api/user", middleware.AuthorizeJWT(jwtService))
+	userRoutes := v1.Group("/user", middleware.AuthorizeJWT(jwtService))
 	{
 		userRoutes.GET("/profile", userController.Profile)
 		userRoutes.PUT("/profile", userController.Update)
 	}
 
-	bookRoutes := r.Group("api/books", middleware.AuthorizeJWT(jwtService))
+	bookRoutes := v1.Group("/books", middleware.AuthorizeJWT(jwtService))
 	{
 		bookRoutes.GET("/", bookController.All)
 		bookRoutes.POST("/", bookController.Insert)
@@ -48,5 +51,5 @@ func main() {
 		bookRoutes.DELETE("/:id", bookController.Delete)
 	}
 
-	r.Run()
+	r.Run(":8080")
 }

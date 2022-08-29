@@ -24,3 +24,8 @@ go mod tidy
 go run main.go
 
 ```
+
+## 推荐阅读
+
+- [gorm.io](https://gorm.io/zh_CN/docs/create.html)
+- [gin](https://gin-gonic.com/zh-cn/docs/)
