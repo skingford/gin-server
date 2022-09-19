@@ -1,9 +1,16 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-08-29 16:26:58
+ * @LastEditTime: 2022-09-19 20:50:40
+ */
 package main
 
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/skingford/gin-server/config"
 	"github.com/skingford/gin-server/controller"
+	"github.com/skingford/gin-server/core"
+	"github.com/skingford/gin-server/global"
 	"github.com/skingford/gin-server/middleware"
 	"github.com/skingford/gin-server/repository"
 	"github.com/skingford/gin-server/service"
@@ -24,6 +31,8 @@ var (
 )
 
 func main() {
+	global.GVA_VP = core.NewViper()
+
 	defer config.CloseDatabaseConnection(db)
 
 	r := gin.Default()

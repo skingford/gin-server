@@ -1,3 +1,8 @@
+<!--
+ * @Author: kingford
+ * @Date: 2022-08-29 16:31:14
+ * @LastEditTime: 2022-09-19 19:32:17
+-->
 # gin-server
 
 ## 启动项目
@@ -26,6 +31,9 @@ go run main.go
 ```
 
 ## 推荐阅读
-
 - [gorm.io](https://gorm.io/zh_CN/docs/create.html)
 - [gin](https://gin-gonic.com/zh-cn/docs/)
+- 日志：使用[zap](https://github.com/uber-go/zap) 实现日志记录。
+- 配置文件：[viper](https://github.com/spf13/viper) 和 [fsnotify](https://github.com/fsnotify/fsnotify) 实现yaml格式的配置文件
+- [jwt]()和[casbin]()
+- API文档：使用Swagger构建自动化文档
