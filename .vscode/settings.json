@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "autocode",
+    "dbname",
     "dpanic",
     "fsnotify",
     "godotenv",
@@ -9,6 +10,7 @@
     "kingford",
     "mapstructure",
     "skingford",
+    "sslmode",
     "zapcore"
   ]
 }

@@ -8,7 +8,7 @@ jwt:
 # zap logger configuration
 zap:
   level: info
-  format: console
+  format: json # console | json
   prefix: github.com/skingford/gin-server
   director: log
   show-line: true
