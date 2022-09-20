@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:06:52
- * @LastEditTime: 2022-09-20 09:53:13
+ * @LastEditTime: 2022-09-20 10:26:13
  */
 package global
 
@@ -33,17 +33,17 @@ var (
 )
 
 // GetGlobalDBByDBName 通过名称获取db list中的db
-func GetGlobalDBByDBName(dbname string) *gorm.DB {
+func GetGlobalDBByDBName(dbName string) *gorm.DB {
 	lock.RLock()
 	defer lock.RUnlock()
-	return GVA_DBList[dbname]
+	return GVA_DBList[dbName]
 }
 
 // MustGetGlobalDBByDBName 通过名称获取db 如果不存在则panic
-func MustGetGlobalDBByDBName(dbname string) *gorm.DB {
+func MustGetGlobalDBByDBName(dbName string) *gorm.DB {
 	lock.RLock()
 	defer lock.RUnlock()
-	db, ok := GVA_DBList[dbname]
+	db, ok := GVA_DBList[dbName]
 	if !ok || db == nil {
 		panic("db no init")
 	}

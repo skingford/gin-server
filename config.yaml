@@ -48,6 +48,30 @@ postgres:
   log-mode: ""
   log-zap: false
 
+# local configuration
+local:
+  path: uploads/file
+  store-path: uploads/file
+
+# autocode configuration
+autocode:
+  transfer-restart: true
+  # root 自动适配项目根目录
+  # 请不要手动配置,他会在项目加载的时候识别出根路径
+  root: ""
+  server: /server
+  server-plug: /plugin/%s
+  server-api: /api/v1/%s
+  server-initialize: /initialize
+  server-model: /model/%s
+  server-request: /model/%s/request/
+  server-router: /router/%s
+  server-service: /service/%s
+  web: /web/src
+  web-api: /api
+  web-form: /view
+  web-table: /view
+
 # 跨域配置
 cors:
   mode: whitelist # 放行模式: allow-all, 放行全部; whitelist, 白名单模式, 来自白名单内域名的请求添加 cors 头; strict-whitelist 严格白名单模式, 白名单外的请求一律拒绝
