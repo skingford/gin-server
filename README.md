@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2022-08-29 16:31:14
- * @LastEditTime: 2022-09-19 19:32:17
+ * @LastEditTime: 2022-09-20 09:53:33
 -->
 # gin-server
 
@@ -20,6 +20,9 @@ DB_NAME = gin-server
 2. 安装包
 
 ```bash
+# 配置代理
+go env -w GOPROXY=https://goproxy.cn 
+
 go mod tidy
 ```
 

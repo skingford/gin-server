@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:17:38
- * @LastEditTime: 2022-09-19 20:18:16
+ * @LastEditTime: 2022-09-20 09:58:33
  */
 
 package packfile
@@ -9,7 +9,6 @@ package packfile
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 )
 
@@ -34,15 +33,15 @@ func writeFile(path string, data []byte) {
 	}
 }
 
-func init() {
-	for key := range _bindata {
-		filePath, _ := filepath.Abs(strings.TrimPrefix(key, "."))
-		data, err := Asset(key)
-		if err != nil {
-			// Asset was not found.
-			fmt.Printf("Fail to find: %s\n", filePath)
-		} else {
-			writeFile(filePath, data)
-		}
-	}
-}
+// func init() {
+// 	for key := range _bindata {
+// 		filePath, _ := filepath.Abs(strings.TrimPrefix(key, "."))
+// 		data, err := Asset(key)
+// 		if err != nil {
+// 			// Asset was not found.
+// 			fmt.Printf("Fail to find: %s\n", filePath)
+// 		} else {
+// 			writeFile(filePath, data)
+// 		}
+// 	}
+// }

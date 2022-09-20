@@ -1,10 +1,13 @@
 {
   "cSpell.words": [
+    "dpanic",
+    "fsnotify",
     "godotenv",
     "gonic",
     "gorm",
     "kingford",
     "mapstructure",
-    "skingford"
+    "skingford",
+    "zapcore"
   ]
 }

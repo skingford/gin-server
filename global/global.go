@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:06:52
- * @LastEditTime: 2022-09-19 20:26:24
+ * @LastEditTime: 2022-09-20 09:53:13
  */
 package global
 
@@ -21,7 +21,7 @@ var (
 	GVA_DB     *gorm.DB
 	GVA_DBList map[string]*gorm.DB
 
-	GVA_CONFIG config.Server
+	GVA_CONFIG config.Config
 
 	GVA_VP *viper.Viper
 	// GVA_LOG    *oplogging.Logger

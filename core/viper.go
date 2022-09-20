@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:03:36
- * @LastEditTime: 2022-09-19 20:58:32
+ * @LastEditTime: 2022-09-20 10:01:10
  */
 package core
 
@@ -59,12 +59,10 @@ func NewViper(path ...string) *viper.Viper {
 	v.SetConfigFile(config)
 	v.SetConfigType("yaml")
 
-	fmt.Printf("config is: %s", config)
-
 	err := v.ReadInConfig()
 
 	if err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
+		panic(fmt.Errorf("fatal error config file: %s \n ---", err))
 	}
 
 	v.WatchConfig()
