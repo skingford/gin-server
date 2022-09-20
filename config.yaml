@@ -37,12 +37,12 @@ captcha:
 
 # postgres connect configuration
 postgres:
-  path: ""
-  port: ""
+  host: "127.0.0.1"
+  port: "5432"
   config: ""
-  db-name: ""
-  username: ""
-  password: ""
+  db-name: "gin-server"
+  username: "postgres"
+  password: "fD52ki3qPbH21ORY6QyZYt6CCdUC"
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: ""
