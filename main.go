@@ -1,13 +1,11 @@
 /*
  * @Author: kingford
  * @Date: 2022-08-29 16:26:58
- * @LastEditTime: 2022-09-20 10:11:01
+ * @LastEditTime: 2022-09-20 10:35:40
  */
 package main
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 	"github.com/skingford/gin-server/config"
 	"github.com/skingford/gin-server/controller"
@@ -35,7 +33,9 @@ var (
 func main() {
 	global.GVA_VP = core.NewViper()
 
-	fmt.Println("global config viper:", global.GVA_CONFIG.System.DbType)
+	global.GVA_LOG = core.Zap() // 初始化zap日志库
+
+	global.GVA_LOG.Info("main init log complete:" + global.GVA_CONFIG.System.DbType)
 
 	defer config.CloseDatabaseConnection(db)
 
