@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:14:57
- * @LastEditTime: 2022-09-19 20:14:59
+ * @LastEditTime: 2022-09-20 11:57:54
  */
 package internal
 
@@ -11,7 +11,8 @@ import (
 	"time"
 
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
-	"github.com/skingford/gin-server/global"
+	"github.com/skingford/gin-server/internal/global"
+
 	"go.uber.org/zap/zapcore"
 )
 

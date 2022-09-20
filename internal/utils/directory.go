@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-20 10:29:16
- * @LastEditTime: 2022-09-20 10:29:21
+ * @LastEditTime: 2022-09-20 11:59:26
  */
 package utils
 
@@ -9,7 +9,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/skingford/gin-server/global"
+	"github.com/skingford/gin-server/internal/global"
 	"go.uber.org/zap"
 )
 

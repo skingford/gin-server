@@ -7,13 +7,13 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/entity"
-	"github.com/skingford/gin-server/helper"
-	"github.com/skingford/gin-server/service"
+	"github.com/skingford/gin-server/internal/app/service"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/entity"
+	"github.com/skingford/gin-server/internal/helper"
 )
 
-//BookController is a ...
+// BookController is a ...
 type BookController interface {
 	All(context *gin.Context)
 	FindByID(context *gin.Context)
@@ -27,7 +27,7 @@ type bookController struct {
 	jwtService  service.JWTService
 }
 
-//NewBookController create a new instances of BoookController
+// NewBookController create a new instances of BoookController
 func NewBookController(bookServ service.BookService, jwtServ service.JWTService) BookController {
 	return &bookController{
 		bookService: bookServ,

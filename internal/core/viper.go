@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-19 20:03:36
- * @LastEditTime: 2022-09-20 10:01:10
+ * @LastEditTime: 2022-09-20 11:57:20
  */
 package core
 
@@ -12,13 +12,11 @@ import (
 	"path/filepath"
 
 	"github.com/gin-gonic/gin"
-	"github.com/skingford/gin-server/core/internal"
+	"github.com/skingford/gin-server/internal/core/internal"
+	"github.com/skingford/gin-server/internal/global"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-
-	"github.com/skingford/gin-server/global"
-	_ "github.com/skingford/gin-server/packfile"
 )
 
 // Viper //

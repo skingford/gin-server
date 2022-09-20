@@ -1,6 +1,11 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 12:00:11
+ */
 package entity
 
-//Book struct represents books table in database
+// Book struct represents books table in database
 type Book struct {
 	ID          uint64 `gorm:"primary_key:auto_increment" json:"id"`
 	Title       string `gorm:"type:varchar(255)" json:"title"`

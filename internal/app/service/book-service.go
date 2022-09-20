@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:56:50
+ */
 package service
 
 import (
@@ -5,12 +10,12 @@ import (
 	"log"
 
 	"github.com/mashingan/smapping"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/entity"
-	"github.com/skingford/gin-server/repository"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/entity"
+	"github.com/skingford/gin-server/internal/repository"
 )
 
-//BookService is a ....
+// BookService is a ....
 type BookService interface {
 	Insert(b dto.BookCreateDTO) entity.Book
 	Update(b dto.BookUpdateDTO) entity.Book
@@ -24,7 +29,7 @@ type bookService struct {
 	bookRepository repository.BookRepository
 }
 
-//NewBookService .....
+// NewBookService .....
 func NewBookService(bookRepo repository.BookRepository) BookService {
 	return &bookService{
 		bookRepository: bookRepo,

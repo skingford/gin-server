@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:56:06
+ */
 package controller
 
 import (
@@ -7,12 +12,12 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/helper"
-	"github.com/skingford/gin-server/service"
+	"github.com/skingford/gin-server/internal/app/service"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/helper"
 )
 
-//UserController is a ....
+// UserController is a ....
 type UserController interface {
 	Update(context *gin.Context)
 	Profile(context *gin.Context)
@@ -23,7 +28,7 @@ type userController struct {
 	jwtService  service.JWTService
 }
 
-//NewUserController is creating anew instance of UserControlller
+// NewUserController is creating anew instance of UserControlller
 func NewUserController(userService service.UserService, jwtService service.JWTService) UserController {
 	return &userController{
 		userService: userService,

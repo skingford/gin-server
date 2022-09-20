@@ -1,15 +1,20 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:56:58
+ */
 package service
 
 import (
 	"log"
 
 	"github.com/mashingan/smapping"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/entity"
-	"github.com/skingford/gin-server/repository"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/entity"
+	"github.com/skingford/gin-server/internal/repository"
 )
 
-//UserService is a contract.....
+// UserService is a contract.....
 type UserService interface {
 	Update(user dto.UserUpdateDTO) entity.User
 	Profile(userID string) entity.User
@@ -19,7 +24,7 @@ type userService struct {
 	userRepository repository.UserRepository
 }
 
-//NewUserService creates a new instance of UserService
+// NewUserService creates a new instance of UserService
 func NewUserService(userRepo repository.UserRepository) UserService {
 	return &userService{
 		userRepository: userRepo,

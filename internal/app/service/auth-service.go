@@ -1,16 +1,22 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:56:21
+ */
 package service
 
 import (
 	"log"
 
 	"github.com/mashingan/smapping"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/entity"
-	"github.com/skingford/gin-server/repository"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/entity"
+	"github.com/skingford/gin-server/internal/repository"
+
 	"golang.org/x/crypto/bcrypt"
 )
 
-//AuthService is a contract about something that this service can do
+// AuthService is a contract about something that this service can do
 type AuthService interface {
 	VerifyCredential(email string, password string) interface{}
 	CreateUser(user dto.RegisterDTO) entity.User
@@ -22,7 +28,7 @@ type authService struct {
 	userRepository repository.UserRepository
 }
 
-//NewAuthService creates a new instance of AuthService
+// NewAuthService creates a new instance of AuthService
 func NewAuthService(userRep repository.UserRepository) AuthService {
 	return &authService{
 		userRepository: userRep,

@@ -1,11 +1,16 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:59:07
+ */
 package repository
 
 import (
-	"github.com/skingford/gin-server/entity"
+	"github.com/skingford/gin-server/internal/entity"
 	"gorm.io/gorm"
 )
 
-//BookRepository is a ....
+// BookRepository is a ....
 type BookRepository interface {
 	InsertBook(b entity.Book) entity.Book
 	UpdateBook(b entity.Book) entity.Book
@@ -18,7 +23,7 @@ type bookConnection struct {
 	connection *gorm.DB
 }
 
-//NewBookRepository creates an instance BookRepository
+// NewBookRepository creates an instance BookRepository
 func NewBookRepository(dbConn *gorm.DB) BookRepository {
 	return &bookConnection{
 		connection: dbConn,

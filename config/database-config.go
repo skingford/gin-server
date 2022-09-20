@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-08-29 16:26:58
- * @LastEditTime: 2022-09-19 19:08:04
+ * @LastEditTime: 2022-09-20 14:10:07
  */
 package config
 
@@ -10,7 +10,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/skingford/gin-server/entity"
+	"github.com/skingford/gin-server/internal/entity"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-20 10:27:53
- * @LastEditTime: 2022-09-20 10:31:03
+ * @LastEditTime: 2022-09-20 11:57:45
  */
 package core
 
@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/skingford/gin-server/core/internal"
-	"github.com/skingford/gin-server/global"
-	"github.com/skingford/gin-server/utils"
+	"github.com/skingford/gin-server/internal/core/internal"
+	"github.com/skingford/gin-server/internal/global"
+	"github.com/skingford/gin-server/internal/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

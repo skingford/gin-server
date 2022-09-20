@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:55:11
+ */
 package controller
 
 import (
@@ -5,13 +10,14 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/skingford/gin-server/dto"
-	"github.com/skingford/gin-server/entity"
-	"github.com/skingford/gin-server/helper"
-	"github.com/skingford/gin-server/service"
+
+	"github.com/skingford/gin-server/internal/app/service"
+	"github.com/skingford/gin-server/internal/dto"
+	"github.com/skingford/gin-server/internal/entity"
+	"github.com/skingford/gin-server/internal/helper"
 )
 
-//AuthController interface is a contract what this controller can do
+// AuthController interface is a contract what this controller can do
 type AuthController interface {
 	Login(ctx *gin.Context)
 	Register(ctx *gin.Context)
@@ -22,7 +28,7 @@ type authController struct {
 	jwtService  service.JWTService
 }
 
-//NewAuthController creates a new instance of AuthController
+// NewAuthController creates a new instance of AuthController
 func NewAuthController(authService service.AuthService, jwtService service.JWTService) AuthController {
 	return &authController{
 		authService: authService,

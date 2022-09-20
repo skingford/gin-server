@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:56:55
+ */
 package service
 
 import (
@@ -8,7 +13,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-//JWTService is a contract of what jwtService can do
+// JWTService is a contract of what jwtService can do
 type JWTService interface {
 	GenerateToken(userID string) string
 	ValidateToken(token string) (*jwt.Token, error)
@@ -24,7 +29,7 @@ type jwtService struct {
 	issuer    string
 }
 
-//NewJWTService method is creates a new instance of JWTService
+// NewJWTService method is creates a new instance of JWTService
 func NewJWTService() JWTService {
 	return &jwtService{
 		issuer:    "ydhnwb",

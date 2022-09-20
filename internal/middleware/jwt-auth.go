@@ -1,3 +1,8 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:58:45
+ */
 package middleware
 
 import (
@@ -6,11 +11,11 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/skingford/gin-server/helper"
-	"github.com/skingford/gin-server/service"
+	"github.com/skingford/gin-server/internal/app/service"
+	"github.com/skingford/gin-server/internal/helper"
 )
 
-//AuthorizeJWT validates the token user given, return 401 if not valid
+// AuthorizeJWT validates the token user given, return 401 if not valid
 func AuthorizeJWT(jwtService service.JWTService) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authHeader := c.GetHeader("Authorization")

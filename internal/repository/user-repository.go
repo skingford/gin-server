@@ -1,14 +1,19 @@
+/*
+ * @Author: kingford
+ * @Date: 2022-09-20 11:49:21
+ * @LastEditTime: 2022-09-20 11:59:12
+ */
 package repository
 
 import (
 	"log"
 
-	"github.com/skingford/gin-server/entity"
+	"github.com/skingford/gin-server/internal/entity"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
-//UserRepository is contract what userRepository can do to db
+// UserRepository is contract what userRepository can do to db
 type UserRepository interface {
 	InsertUser(user entity.User) entity.User
 	UpdateUser(user entity.User) entity.User
@@ -22,7 +27,7 @@ type userConnection struct {
 	connection *gorm.DB
 }
 
-//NewUserRepository is creates a new instance of UserRepository
+// NewUserRepository is creates a new instance of UserRepository
 func NewUserRepository(db *gorm.DB) UserRepository {
 	return &userConnection{
 		connection: db,

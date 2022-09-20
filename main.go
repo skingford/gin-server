@@ -1,19 +1,20 @@
 /*
  * @Author: kingford
  * @Date: 2022-08-29 16:26:58
- * @LastEditTime: 2022-09-20 10:35:40
+ * @LastEditTime: 2022-09-20 11:59:49
  */
 package main
 
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/skingford/gin-server/config"
-	"github.com/skingford/gin-server/controller"
-	"github.com/skingford/gin-server/core"
-	"github.com/skingford/gin-server/global"
-	"github.com/skingford/gin-server/middleware"
-	"github.com/skingford/gin-server/repository"
-	"github.com/skingford/gin-server/service"
+	"github.com/skingford/gin-server/internal/app/controller"
+	"github.com/skingford/gin-server/internal/app/service"
+	"github.com/skingford/gin-server/internal/core"
+	"github.com/skingford/gin-server/internal/global"
+	"github.com/skingford/gin-server/internal/middleware"
+	"github.com/skingford/gin-server/internal/repository"
+
 	"gorm.io/gorm"
 )
 
