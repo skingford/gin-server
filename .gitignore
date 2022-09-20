@@ -16,3 +16,6 @@
 
 # debug
 __debug_bin
+
+# log
+log/*
