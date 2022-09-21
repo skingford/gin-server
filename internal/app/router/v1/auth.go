@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-20 19:38:56
- * @LastEditTime: 2022-09-20 20:31:54
+ * @LastEditTime: 2022-09-21 10:20:04
  */
 package v1
 
@@ -10,15 +10,11 @@ import (
 
 	"github.com/skingford/gin-server/internal/app/controller"
 	"github.com/skingford/gin-server/internal/app/service"
-	"github.com/skingford/gin-server/internal/global"
-	"github.com/skingford/gin-server/internal/repository"
 )
 
 var (
-	userRepository repository.UserRepository = repository.NewUserRepository(global.GVA_DB)
-	jwtService     service.JWTService        = service.NewJWTService()
-	authService    service.AuthService       = service.NewAuthService(userRepository)
-	authController controller.AuthController = controller.NewAuthController(authService, jwtService)
+	authService    service.AuthService       = service.NewAuthService(UserRepository)
+	authController controller.AuthController = controller.NewAuthController(authService, JwtService)
 )
 
 type AuthRouter struct{}
