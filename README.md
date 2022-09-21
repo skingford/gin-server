@@ -1,7 +1,7 @@
 <!--
  * @Author: kingford
  * @Date: 2022-08-29 16:31:14
- * @LastEditTime: 2022-09-20 10:46:57
+ * @LastEditTime: 2022-09-21 09:38:25
 -->
 # gin-server
 
@@ -39,6 +39,20 @@ go run main.go
 
 ```bash
 git rm -r --cached .
+```
+
+## 使用Swagger构建自动化文档
+
+1. swag环境变量
+
+```bash
+PATH=$(go env GOPATH)/bin:$PATH
+```
+
+2. swagger
+
+```bash
+swag init
 ```
 
 ## 推荐阅读

@@ -1,7 +1,7 @@
 /*
  * @Author: kingford
  * @Date: 2022-09-20 20:18:55
- * @LastEditTime: 2022-09-20 20:56:28
+ * @LastEditTime: 2022-09-21 09:40:03
  */
 package router
 
@@ -9,8 +9,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/skingford/gin-server/internal/global"
 
-	docs "github.com/go-project-name/docs"
-	swaggerfiles "github.com/swaggo/files"
+	docs "github.com/skingford/gin-server/docs"
+	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
@@ -23,7 +23,7 @@ func Routers() *gin.Engine {
 
 	docs.SwaggerInfo.BasePath = "/v1"
 
-	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	global.GVA_LOG.Info("register swagger handler")
 	// 方便统一添加路由组前缀 多服务器上线使用
